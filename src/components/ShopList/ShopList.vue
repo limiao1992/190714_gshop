@@ -1,11 +1,11 @@
 <template>
   <div class="shop_container">
     <ul class="shop_list" v-if="shops.length">
-      <li class="shop_li border-1px" v-for="(shop,index) in shops" :key="index">
+      <li class="shop_li border-1px" v-for="(shop,index) in shops" :key="index" @click="$router.push('/shop')">
         <a>
           <div class="shop_left">
             <img class="shop_img"
-                 src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1563190629490&di=c063bbf33ca91b065e4f5f29a040c02d&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D2189681549%2C8526483%26fm%3D214%26gp%3D0.jpg">
+                 src="http://i1.whymtj.com/uploads/tu/201907/9999/51790b8bb1.jpg">
           </div>
           <div class="shop_right">
             <section class="shop_detail_header">
