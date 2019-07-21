@@ -18,7 +18,7 @@
         <!--首页导航-->
         <nav class="msite_nav">
           <div class="swiper-container" v-if="categorys.length">
-            <div class="swiper-wrapper" >
+            <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(categorys, index) in categorysArr" :key="index">
                 <a href="javascript:" class="link_to_food" v-for="(category, index) in categorys" :key="index">
                   <div class="food_container">
@@ -36,7 +36,9 @@
         <!--首页附近商家-->
         <div class="msite_shop_list">
           <div class="shop_header">
-            <i class="iconfont icon-xuanxiang"></i>
+            <span class="item_icon">
+                <i class="iconfont icon-xuanxiang"></i>
+            </span>
             <span class="shop_header_title">附近商家</span>
           </div>
           <ShopList/>
@@ -65,7 +67,7 @@
       this.$store.dispatch('getCategorys')
     },
     computed: {
-      ...mapState(['address', 'categorys','userInfo']),
+      ...mapState(['address', 'categorys', 'userInfo']),
 
       /*
        根据categorys一维数组生成一个2维数组
@@ -108,7 +110,7 @@
         //   })
         // },100)
         // 界面更新就立即创建Swiper对象
-        this.$nextTick(()=>{// 一旦完成界面更新, 立即调用(此条语句要写在数据更新之后)
+        this.$nextTick(() => {// 一旦完成界面更新, 立即调用(此条语句要写在数据更新之后)
           //创建一个swiper实例对象，来实现轮播
           new Swiper('.swiper-container', {
             loop: true,//可以循环轮播
@@ -186,6 +188,7 @@
 
       .shop_header
         padding 10px 10px 0
+
 
         .shop_icon
           margin-left 5px
